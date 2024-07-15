@@ -5,12 +5,12 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'opencv-python',
-        'pytesseract',
-        'pillow',
-        'pandas',
-        'tqdm',
-        'numpy'
+        'opencv-python>=4.5.1', 
+        'pytesseract>=0.3.7',
+        'pillow>=8.1.0', 
+        'pandas>=1.2.3',
+        'tqdm>=4.59.0',
+        'numpy>=1.20.1' 
     ],
     entry_points={
         'console_scripts': [

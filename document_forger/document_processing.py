@@ -54,7 +54,7 @@ def character_replacer(cv_img, text, characters, confidence_threshold):
                     return cv_img
     return None
 
-def process_document(i, cv_img, annotations, probability, confidence_threshold, output_dir, img_name):
+def process(i, cv_img, annotations, probability, confidence_threshold, output_dir, img_name):
     duplicate_img = copy.deepcopy(cv_img)
     flag = True
     name = img_name.split('.')[0]
@@ -72,7 +72,7 @@ def process_document(i, cv_img, annotations, probability, confidence_threshold, 
 def process_document_wrapper(args):
     unique_seed = time() + os.getpid()
     random.seed(unique_seed)
-    return process_document(*args)
+    return process(*args)
 
 def process_document(input_image, output_dir, probability=DEFAULT_PROBABILITY, total_documents=TOTAL_DOCUMENTS, confidence_threshold=CONFIDENCE_THRESHOLD, deskew_image=DESKEW_IMAGE):
     img_name = os.path.basename(input_image)
