@@ -36,9 +36,9 @@ This shows the capabilities of our package to work with different sizes, styles 
 Through Scripts:
 
 ```python
-from document_forger.src.document_processing import process_main
+from document_forger.document_processing import process_document
 
-process_main(input_image, output_directory)
+process_document(input_image, output_directory)
 ```
 
 Or through the terminal
@@ -49,7 +49,7 @@ To explore the other arguments just run ```--help``` at the end.
 
 If you have tesseract installed and added to your local enviorments, than set the path to the exe using the following:
 ```python
-from document_forger.src.utils import set_tesseract_cmd
+from document_forger.utils import set_tesseract_cmd
 
 set_tesseract_cmd(exe_path)
 ```

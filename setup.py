@@ -1,8 +1,11 @@
 from setuptools import setup, find_packages
 
+with open('README.md', 'r') as f:
+    project_description = f.read()
+
 setup(
     name='document_forger',
-    version='0.1',
+    version='0.1.2',
     packages=find_packages(),
     install_requires=[
         'opencv-python>=4.5.1', 
@@ -19,9 +22,11 @@ setup(
     },
     include_package_data=True,
     description='A package for generating forged documents',
-    author='',
-    author_email='',
-    url='', 
+    long_description=project_description,
+    long_description_content_type='text/markdown',
+    author='Talal Habib',
+    author_email='talalhabibmalik123@gmail.com',
+    url='https://github.com/TalalHabib123/document_forger', 
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
