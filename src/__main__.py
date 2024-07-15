@@ -1,7 +1,7 @@
 import argparse
 import os
-from document_processing import main as process_main
-from utils import set_tesseract_cmd, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
+from src.document_processing import main as process_main
+from src.utils import set_tesseract_cmd, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Character Replacement')

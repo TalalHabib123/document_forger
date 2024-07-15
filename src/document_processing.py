@@ -5,9 +5,9 @@ import random
 import multiprocessing
 from tqdm import tqdm
 from time import time
-from utils import compute_statistics, get_character_index, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
-from ocr import extract_words, extract_characters, image_comparison
-from image_processing import process_image
+from src.utils import compute_statistics, get_character_index, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
+from src.ocr import extract_words, extract_characters, image_comparison
+from src.image_processing import process_image
 
 def character_replacer(cv_img, text, characters, confidence_threshold):
     index = get_character_index(text, characters)
