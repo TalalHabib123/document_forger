@@ -5,9 +5,9 @@ import random
 import multiprocessing
 from tqdm import tqdm
 from time import time
-from src.utils import compute_statistics, get_character_index, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
-from src.ocr import extract_words, extract_characters, image_comparison
-from src.image_processing import process_image
+from .utils import compute_statistics, get_character_index, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
+from .ocr import extract_words, extract_characters, image_comparison
+from .image_processing import process_image
 
 def character_replacer(cv_img, text, characters, confidence_threshold):
     index = get_character_index(text, characters)
@@ -74,7 +74,7 @@ def process_document_wrapper(args):
     random.seed(unique_seed)
     return process_document(*args)
 
-def main(input_image, output_dir, probability=DEFAULT_PROBABILITY, total_documents=TOTAL_DOCUMENTS, confidence_threshold=CONFIDENCE_THRESHOLD, deskew_image=DESKEW_IMAGE):
+def process_document(input_image, output_dir, probability=DEFAULT_PROBABILITY, total_documents=TOTAL_DOCUMENTS, confidence_threshold=CONFIDENCE_THRESHOLD, deskew_image=DESKEW_IMAGE):
     img_name = os.path.basename(input_image)
     annotations = {}
     pil_img, cv_img = process_image(input_image, deskew_image)

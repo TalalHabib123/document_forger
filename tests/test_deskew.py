@@ -1,5 +1,5 @@
 import unittest
-from src.image_processing import get_skew_angle, rotate_image, deskew
+from document_forger.image_processing import get_skew_angle, rotate_image, deskew
 import numpy as np
 
 class TestTextProcessor(unittest.TestCase):

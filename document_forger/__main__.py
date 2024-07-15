@@ -1,7 +1,7 @@
 import argparse
 import os
-from src.document_processing import main as process_main
-from src.utils import set_tesseract_cmd, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
+from .document_processing import process_document
+from .utils import set_tesseract_cmd, DEFAULT_PROBABILITY, TOTAL_DOCUMENTS, CONFIDENCE_THRESHOLD, DESKEW_IMAGE
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Character Replacement')
@@ -26,4 +26,4 @@ if __name__ == '__main__':
     if args.tesseract_cmd:
         set_tesseract_cmd(args.tesseract_cmd)
 
-    process_main(args.image_path, args.output_dir, args.probability, args.total_documents, args.confidence_threshold, args.deskew_image)
+    process_document(args.image_path, args.output_dir, args.probability, args.total_documents, args.confidence_threshold, args.deskew_image)
